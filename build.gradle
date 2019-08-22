@@ -1,0 +1,24 @@
+plugins {
+    id'java'
+    id'application'
+    id'com.github.johnrengelman.shadow' version '4.0.4'
+}
+
+mainClassName = 'me.duncte123.jdatuts.Bot'
+
+version '1.0'
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'net.dv8tion', name: 'JDA', version: '4.0.0_44'
+    compile group: 'com.jagrosh', name: 'jda-utilities', version: '3.0.1'
+    compile group: 'me.duncte123', name: 'botCommons', version: '1.0.45'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+}
+
+compileJava.options.encoding = 'UTF-8'
