@@ -1,7 +1,7 @@
 plugins {
-    id'java'
-    id'application'
-    id'com.github.johnrengelman.shadow' version '4.0.4'
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
 }
 
 mainClassName = 'me.duncte123.jdatuts.Bot'
@@ -15,10 +15,11 @@ repositories {
 }
 
 dependencies {
-    compile group: 'net.dv8tion', name: 'JDA', version: '4.0.0_44'
-    compile group: 'com.jagrosh', name: 'jda-utilities', version: '3.0.1'
-    compile group: 'me.duncte123', name: 'botCommons', version: '1.0.45'
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'net.dv8tion', name: 'JDA', version: '4.0.0_44'
+    implementation group: 'com.jagrosh', name: 'jda-utilities', version: '3.0.1'
+    implementation group: 'me.duncte123', name: 'botCommons', version: '1.0.45'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.1.1'
 }
 
 compileJava.options.encoding = 'UTF-8'

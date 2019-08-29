@@ -10,7 +10,7 @@ public class Bot {
     private Bot() throws LoginException {
 
         new JDABuilder()
-                .setToken("NDg1MzQzNDI4NTYxODYyNjU2.XV5aqQ.kqcxTbBuk-ae_OJtYlj5iLrTxy4")
+                .setToken(Config.get("token"))
                 .addEventListeners(new Listener())
                 .setActivity(Activity.watching("MenuDocs"))
                 .build();
