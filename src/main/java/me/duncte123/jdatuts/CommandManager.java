@@ -3,6 +3,7 @@ package me.duncte123.jdatuts;
 import me.duncte123.jdatuts.command.CommandContext;
 import me.duncte123.jdatuts.command.ICommand;
 import me.duncte123.jdatuts.command.commands.HelpCommand;
+import me.duncte123.jdatuts.command.commands.PasteCommand;
 import me.duncte123.jdatuts.command.commands.PingCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -18,6 +19,7 @@ public class CommandManager {
     public CommandManager() {
         addCommand(new PingCommand());
         addCommand(new HelpCommand(this));
+        addCommand(new PasteCommand());
     }
 
     private void addCommand(ICommand cmd) {
