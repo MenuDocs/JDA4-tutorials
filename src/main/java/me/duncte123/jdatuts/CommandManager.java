@@ -2,6 +2,7 @@ package me.duncte123.jdatuts;
 
 import me.duncte123.jdatuts.command.CommandContext;
 import me.duncte123.jdatuts.command.ICommand;
+import me.duncte123.jdatuts.command.commands.HasteCommand;
 import me.duncte123.jdatuts.command.commands.HelpCommand;
 import me.duncte123.jdatuts.command.commands.PasteCommand;
 import me.duncte123.jdatuts.command.commands.PingCommand;
@@ -20,6 +21,7 @@ public class CommandManager {
         addCommand(new PingCommand());
         addCommand(new HelpCommand(this));
         addCommand(new PasteCommand());
+        addCommand(new HasteCommand());
     }
 
     private void addCommand(ICommand cmd) {
