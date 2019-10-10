@@ -2,10 +2,7 @@ package me.duncte123.jdatuts;
 
 import me.duncte123.jdatuts.command.CommandContext;
 import me.duncte123.jdatuts.command.ICommand;
-import me.duncte123.jdatuts.command.commands.HasteCommand;
-import me.duncte123.jdatuts.command.commands.HelpCommand;
-import me.duncte123.jdatuts.command.commands.PasteCommand;
-import me.duncte123.jdatuts.command.commands.PingCommand;
+import me.duncte123.jdatuts.command.commands.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -22,6 +19,7 @@ public class CommandManager {
         addCommand(new HelpCommand(this));
         addCommand(new PasteCommand());
         addCommand(new HasteCommand());
+        addCommand(new KickCommand());
     }
 
     private void addCommand(ICommand cmd) {
