@@ -20,6 +20,7 @@ public class CommandManager {
         addCommand(new PasteCommand());
         addCommand(new HasteCommand());
         addCommand(new KickCommand());
+        addCommand(new MemeCommand());
     }
 
     private void addCommand(ICommand cmd) {
