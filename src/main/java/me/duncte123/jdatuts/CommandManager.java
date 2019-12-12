@@ -23,6 +23,7 @@ public class CommandManager {
         addCommand(new MemeCommand());
         addCommand(new JokeCommand());
         addCommand(new WebhookCommand());
+        addCommand(new InstagramCommand());
     }
 
     private void addCommand(ICommand cmd) {
