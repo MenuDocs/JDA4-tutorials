@@ -2,6 +2,7 @@ package me.duncte123.jdatuts.command.commands;
 
 import me.duncte123.jdatuts.CommandManager;
 import me.duncte123.jdatuts.Config;
+import me.duncte123.jdatuts.VeryBadDesign;
 import me.duncte123.jdatuts.command.CommandContext;
 import me.duncte123.jdatuts.command.ICommand;
 import net.dv8tion.jda.api.entities.TextChannel;
@@ -23,11 +24,15 @@ public class HelpCommand implements ICommand {
 
         if (args.isEmpty()) {
             StringBuilder builder = new StringBuilder();
+            String prefix = VeryBadDesign.PREFIXES.get(ctx.getGuild().getIdLong());
 
             builder.append("List of commands\n");
 
             manager.getCommands().stream().map(ICommand::getName).forEach(
-                    (it) -> builder.append('`').append(Config.get("prefix")).append(it).append("`\n")
+                    (it) -> builder.append('`')
+                            .append(prefix)
+                            .append(it)
+                            .append("`\n")
             );
 
             channel.sendMessage(builder.toString()).queue();
