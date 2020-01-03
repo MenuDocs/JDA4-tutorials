@@ -3,10 +3,13 @@ package me.duncte123.jdatuts.command.commands.admin;
 import me.duncte123.jdatuts.VeryBadDesign;
 import me.duncte123.jdatuts.command.CommandContext;
 import me.duncte123.jdatuts.command.ICommand;
+import me.duncte123.jdatuts.database.SQLiteDataSource;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class SetPrefixCommand implements ICommand {
@@ -27,7 +30,7 @@ public class SetPrefixCommand implements ICommand {
         }
 
         final String newPrefix = String.join("", args);
-        VeryBadDesign.PREFIXES.put(ctx.getGuild().getIdLong(), newPrefix);
+        updatePrefix(ctx.getGuild().getIdLong(), newPrefix);
 
         channel.sendMessageFormat("New prefix has been set to `%s`", newPrefix).queue();
     }
@@ -41,5 +44,22 @@ public class SetPrefixCommand implements ICommand {
     public String getHelp() {
         return "Sets the prefix for this server\n" +
                 "Usage: `!!setprefix <prefix>`";
+    }
+
+    private void updatePrefix(long guildId, String newPrefix) {
+        VeryBadDesign.PREFIXES.put(guildId, newPrefix);
+
+        try (final PreparedStatement preparedStatement = SQLiteDataSource
+                .getConnection()
+                // language=SQLite
+                .prepareStatement("UPDATE guild_settings SET prefix = ? WHERE guild_id = ?")) {
+
+            preparedStatement.setString(1, newPrefix);
+            preparedStatement.setString(2, String.valueOf(guildId));
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

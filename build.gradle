@@ -22,6 +22,9 @@ dependencies {
     implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.1.1'
     implementation group: 'org.menudocs', name: 'paste-client-java', version: '1.0.16'
     implementation group: 'club.minnced', name: 'discord-webhooks', version: '0.1.8'
+
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '3.4.1'
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.30.1'
 }
 
 compileJava.options.encoding = 'UTF-8'
