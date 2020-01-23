@@ -25,6 +25,7 @@ public class CommandManager {
         addCommand(new JokeCommand());
         addCommand(new WebhookCommand());
         addCommand(new InstagramCommand());
+        addCommand(new MinecraftCommand());
 
         addCommand(new SetPrefixCommand());
     }
