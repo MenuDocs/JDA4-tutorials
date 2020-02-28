@@ -20,7 +20,7 @@ if len(sys.argv) > 1:
 
 for i in range(1, count + 1):
     num = str(i).zfill(2)
-    extra_template = f"[Episode {num}](/MenuDocs/JDA4-tutorials/tree/EP{num})\n"
+    extra_template = f"[Episode {num}](/MenuDocs/JDA4-tutorials/tree/EP{num})\n\n"
 
     base_template += extra_template
 
