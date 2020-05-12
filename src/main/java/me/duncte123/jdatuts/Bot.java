@@ -17,7 +17,7 @@ public class Bot {
     private Bot() throws LoginException {
         // Sneaky init of the class for faster boot
         DatabaseManager.INSTANCE.getPrefix(-1);
-        WebUtils.setUserAgent();
+        WebUtils.setUserAgent("I am a bot");
         EmbedUtils.setEmbedBuilder(
                 () -> new EmbedBuilder()
                 .setColor(0x3883d9)
@@ -27,14 +27,15 @@ public class Bot {
         JDABuilder.createDefault(
                 Config.get("token"),
                 GatewayIntent.GUILD_MEMBERS,
-                GatewayIntent.GUILD_MESSAGES
+                GatewayIntent.GUILD_MESSAGES,
+                GatewayIntent.GUILD_VOICE_STATES
         )
-                .setDisabledCacheFlags(EnumSet.of(
+                .disableCache(EnumSet.of(
                         CacheFlag.CLIENT_STATUS,
                         CacheFlag.ACTIVITY,
-                        CacheFlag.EMOTE,
-                        CacheFlag.VOICE_STATE
+                        CacheFlag.EMOTE
                 ))
+                .enableCache(CacheFlag.VOICE_STATE)
                 .addEventListeners(new Listener())
                 .setActivity(Activity.watching("MenuDocs"))
                 .build();

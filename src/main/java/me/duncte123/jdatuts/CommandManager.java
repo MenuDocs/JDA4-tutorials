@@ -4,6 +4,7 @@ import me.duncte123.jdatuts.command.CommandContext;
 import me.duncte123.jdatuts.command.ICommand;
 import me.duncte123.jdatuts.command.commands.*;
 import me.duncte123.jdatuts.command.commands.admin.SetPrefixCommand;
+import me.duncte123.jdatuts.command.commands.music.JoinCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -28,6 +29,8 @@ public class CommandManager {
         addCommand(new MinecraftCommand());
 
         addCommand(new SetPrefixCommand());
+
+        addCommand(new JoinCommand());
     }
 
     private void addCommand(ICommand cmd) {
