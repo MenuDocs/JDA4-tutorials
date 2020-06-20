@@ -15,13 +15,14 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'net.dv8tion', name: 'JDA', version: '4.1.1_149'
+    implementation group: 'net.dv8tion', name: 'JDA', version: '4.1.1_165'
     implementation group: 'me.duncte123', name: 'botCommons', version: '1.0.73'
     implementation group: 'com.jagrosh', name: 'jda-utilities', version: '3.0.1'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.1.1'
     implementation group: 'org.menudocs', name: 'paste-client-java', version: '1.0.16'
     implementation group: 'club.minnced', name: 'discord-webhooks', version: '0.1.8'
+    implementation group: 'com.sedmelluq', name: 'lavaplayer', version: '1.3.50'
 
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '3.4.1'
     implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.30.1'
