@@ -6,6 +6,7 @@ import me.duncte123.jdatuts.command.commands.*;
 import me.duncte123.jdatuts.command.commands.admin.SetPrefixCommand;
 import me.duncte123.jdatuts.command.commands.music.JoinCommand;
 import me.duncte123.jdatuts.command.commands.music.PlayCommand;
+import me.duncte123.jdatuts.command.commands.music.StopCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -33,6 +34,7 @@ public class CommandManager {
 
         addCommand(new JoinCommand());
         addCommand(new PlayCommand());
+        addCommand(new StopCommand());
     }
 
     private void addCommand(ICommand cmd) {
