@@ -4,10 +4,7 @@ import me.duncte123.jdatuts.command.CommandContext;
 import me.duncte123.jdatuts.command.ICommand;
 import me.duncte123.jdatuts.command.commands.*;
 import me.duncte123.jdatuts.command.commands.admin.SetPrefixCommand;
-import me.duncte123.jdatuts.command.commands.music.JoinCommand;
-import me.duncte123.jdatuts.command.commands.music.PlayCommand;
-import me.duncte123.jdatuts.command.commands.music.SkipCommand;
-import me.duncte123.jdatuts.command.commands.music.StopCommand;
+import me.duncte123.jdatuts.command.commands.music.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -34,6 +31,7 @@ public class CommandManager {
         addCommand(new SetPrefixCommand());
 
         addCommand(new JoinCommand());
+        addCommand(new NowPlayingCommand());
         addCommand(new PlayCommand());
         addCommand(new StopCommand());
         addCommand(new SkipCommand());
