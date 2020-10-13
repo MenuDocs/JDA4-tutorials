@@ -36,6 +36,7 @@ public class CommandManager {
         addCommand(new StopCommand());
         addCommand(new SkipCommand());
         addCommand(new QueueCommand());
+        addCommand(new RepeatCommand());
     }
 
     private void addCommand(ICommand cmd) {
