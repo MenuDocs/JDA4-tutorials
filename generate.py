@@ -12,7 +12,7 @@ base_template = """
 print(base_template)
 
 
-count = 1
+count = 28
 
 if len(sys.argv) > 1:
     count = int(sys.argv[1])
