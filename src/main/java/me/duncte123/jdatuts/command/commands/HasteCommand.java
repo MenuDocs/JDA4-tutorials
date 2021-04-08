@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 
 public class HasteCommand implements ICommand {
 
-    private static final String HASTE_SERVER = "https://hasteb.in/";
+    private static final String HASTE_SERVER = "https://hastebin.de/";
 
     @Override
     public void handle(CommandContext ctx) {
@@ -35,7 +35,7 @@ public class HasteCommand implements ICommand {
 
     private void createPaste(String text, Consumer<String> callback) {
         Request request = WebUtils.defaultRequest()
-                .post(RequestBody.create(text.getBytes()))
+                .post(RequestBody.create(null, text.getBytes()))
                 .addHeader("Content-Type", ContentType.TEXT_PLAIN.getType())
                 .url(HASTE_SERVER + "documents")
                 .build();
